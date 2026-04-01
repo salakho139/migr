@@ -26,52 +26,62 @@
     </div>
 </section>
 
-<section id="hook-1" class="transition-page hook-page hook-page--intro">
-    <div class="text-frame hook-text-frame">
-        <p class="fade-up hook-kicker">You are a citizen of the world.</p>
-        <p class="fade-up hook-main-line">
-            And you might want to travel across the vast <span class="accent-line">geography</span> of that world.
-            Maybe the Americas. Maybe Europe.
-        </p>
-    </div>
-    <p class="scroll-hint"><span>Scroll to continue</span><br><span class="arrow">↓</span></p>
-</section>
-
-<section id="hook-2" class="transition-page hook-page hook-page--question">
-    <div class="text-frame hook-text-frame">
-        <p class="fade-up hook-main-line">
-            The question is: <span class="hook-emphasis">what does crossing a border cost</span>?
-        </p>
-        <p class="fade-up hook-sub-line">
-            You are a citizen of the world, after all.
-        </p>
-        <p class="fade-up hook-main-line">
-            Or does it matter <span class="accent-line">which side of the border</span> you were born on?
-        </p>
-    </div>
-    <p class="scroll-hint"><span>Scroll to continue</span><br><span class="arrow">↓</span></p>
-</section>
-
-<section id="hook-3" class="transition-page hook-page hook-page--choice">
-    <div class="text-frame hook-text-frame hook-choice-frame">
-        <p class="fade-up hook-main-line">
-            For some travelers, Europe is a flight away.
-            For others, it is paperwork, fees, and refusal.
-        </p>
-        <p class="fade-up hook-question-line">Which world are you in?</p>
-
-        <div class="fade-up visa-choice-buttons">
-            <button class="visa-choice-btn" data-journey="visa-free">I do not need a visa</button>
-            <button class="visa-choice-btn" data-journey="visa-required">I need a visa / I’m not sure</button>
-        </div>
-
-        <div id="hook-response" class="hook-response fade-up">
-            Choose a path to continue.
+<section id="hook-1" class="transition-page hook-scene hook-scene--one">
+    <div class="hook-canvas">
+        <div class="hook-sequence">
+            <p class="hook-line hook-line-1">You are a citizen of the world.</p>
+            <p class="hook-line hook-line-2">
+                And you might want to travel across the vast geography of that world.
+            </p>
+            <p class="hook-line hook-line-3">
+                Maybe the Americas. Maybe <span class="accent-line">Europe.</span>
+            </p>
         </div>
     </div>
 </section>
 
-<section id="hook-4" class="transition-page hook-page hook-visual-page">
+<section id="hook-2" class="transition-page hook-scene hook-scene--two">
+    <div class="hook-canvas">
+        <div class="hook-sequence">
+            <p class="hook-line hook-line-1">
+                The question is: <span class="hook-strong">what does crossing a border cost?</span>
+            </p>
+            <p class="hook-line hook-line-2">
+                You are a citizen of the world, after all.
+            </p>
+            <p class="hook-line hook-line-3">
+                Or does it matter <span class="accent-line">which side of the border</span> you were born on?
+            </p>
+        </div>
+    </div>
+</section>
+
+<section id="hook-3" class="transition-page hook-scene hook-scene--three">
+    <div class="hook-canvas">
+        <div class="hook-sequence hook-sequence--choice">
+            <p class="hook-line hook-line-1">
+                For some travelers, Europe is a flight away.
+            </p>
+            <p class="hook-line hook-line-2">
+                For others, it is paperwork, fees, and refusal.
+            </p>
+            <p class="hook-line hook-line-3 hook-question-line">
+                Which world are you in?
+            </p>
+
+            <div class="hook-choice-wrap">
+                <button class="visa-choice-btn" data-journey="visa-free">I do not need a visa</button>
+                <button class="visa-choice-btn" data-journey="visa-required">I need a visa / I’m not sure</button>
+            </div>
+
+            <div id="hook-response" class="hook-response-minimal">
+                Choose a path to continue.
+            </div>
+        </div>
+    </div>
+</section>
+
+<section id="hook-4" class="transition-page hook-visual-page">
     <div class="hook-visual-wrap">
         <div class="hook-visual-header">
             <p class="hook-visual-kicker">The same destination does not cost everyone the same.</p>

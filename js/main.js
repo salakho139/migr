@@ -339,6 +339,8 @@ function initHookExperience() {
 
     // default state
     cards.forEach(card => card.classList.remove("active"));
+    response.innerHTML = "Choose a path to continue.";
+    visualResponse.innerHTML = "Select a path above and then scroll to see how that inequality appears on the map.";
 }
 
 init().catch(error => {

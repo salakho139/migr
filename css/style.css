@@ -1021,3 +1021,200 @@ svg {
         font-size: 14px;
     }
 }
+
+/* ─────────────────────────────
+   Cinematic hook scenes
+───────────────────────────── */
+
+.hook-scene {
+    min-height: 100vh;
+    padding: 0 6vw;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background:
+        radial-gradient(circle at 50% 18%, rgba(249, 115, 22, 0.12), transparent 24%),
+        linear-gradient(180deg, #000000 0%, #000000 100%);
+    position: relative;
+    overflow: hidden;
+}
+
+.hook-canvas {
+    width: 100%;
+    max-width: 1400px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.hook-sequence {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 28px;
+    min-height: 70vh;
+}
+
+.hook-sequence--choice {
+    gap: 34px;
+}
+
+.hook-line {
+    margin: 0;
+    max-width: 1200px;
+    font-family: var(--font-heading);
+    font-size: clamp(2.5rem, 4.8vw, 5.4rem);
+    line-height: 1.2;
+    color: #ffffff;
+    letter-spacing: -0.03em;
+    opacity: 0;
+    transform: translateY(36px);
+    transition: opacity 0.9s cubic-bezier(0.22, 1, 0.36, 1),
+                transform 0.9s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.hook-line.hook-line-2,
+.hook-line.hook-line-3 {
+    font-size: clamp(2rem, 4vw, 4.3rem);
+    line-height: 1.28;
+}
+
+.hook-question-line {
+    margin-top: 12px;
+    font-size: clamp(2.1rem, 4.2vw, 4.6rem);
+}
+
+.hook-strong {
+    font-weight: 800;
+    color: #ffffff;
+}
+
+.transition-page.visible.hook-scene .hook-line-1 {
+    opacity: 1;
+    transform: translateY(0);
+    transition-delay: 0.15s;
+}
+
+.transition-page.visible.hook-scene .hook-line-2 {
+    opacity: 1;
+    transform: translateY(0);
+    transition-delay: 0.55s;
+}
+
+.transition-page.visible.hook-scene .hook-line-3 {
+    opacity: 1;
+    transform: translateY(0);
+    transition-delay: 0.95s;
+}
+
+.hook-scene .scroll-hint {
+    display: none !important;
+}
+
+.hook-choice-wrap {
+    display: flex;
+    gap: 24px;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin-top: 10px;
+    opacity: 0;
+    transform: translateY(30px);
+    transition: all 0.9s cubic-bezier(0.22, 1, 0.36, 1);
+    transition-delay: 1.25s;
+}
+
+.transition-page.visible.hook-scene .hook-choice-wrap {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.hook-response-minimal {
+    max-width: 900px;
+    min-height: 70px;
+    color: var(--text-secondary);
+    font-size: 22px;
+    line-height: 1.7;
+    opacity: 0;
+    transform: translateY(20px);
+    transition: all 0.8s cubic-bezier(0.22, 1, 0.36, 1);
+    margin-top: 6px;
+}
+
+.hook-response-minimal strong {
+    color: #ffffff;
+}
+
+.hook-response-minimal .accent {
+    color: var(--accent);
+    font-weight: 700;
+}
+
+.transition-page.visible.hook-scene .hook-response-minimal {
+    opacity: 1;
+    transform: translateY(0);
+    transition-delay: 1.45s;
+}
+
+.hook-scene .text-frame,
+.hook-scene .hook-text-frame,
+.hook-scene .hook-choice-frame {
+    background: transparent !important;
+    border: none !important;
+    box-shadow: none !important;
+    backdrop-filter: none !important;
+    -webkit-backdrop-filter: none !important;
+    padding: 0 !important;
+    max-width: none !important;
+}
+
+.hook-scene--one .hook-line-1 {
+    font-size: clamp(3rem, 5.4vw, 6rem);
+}
+
+.hook-scene--one .hook-line-2 {
+    font-size: clamp(2.2rem, 4.4vw, 4.8rem);
+}
+
+.hook-scene--one .hook-line-3 {
+    font-size: clamp(2rem, 4.2vw, 4.5rem);
+}
+
+.hook-scene--two .hook-line-1 {
+    font-size: clamp(2.4rem, 4.5vw, 4.8rem);
+}
+
+.hook-scene--two .hook-line-2 {
+    font-size: clamp(1.9rem, 3.5vw, 3.6rem);
+    color: #d6d8e1;
+}
+
+.hook-scene--two .hook-line-3 {
+    font-size: clamp(2.2rem, 4vw, 4.2rem);
+}
+
+.hook-scene--three .hook-line-1,
+.hook-scene--three .hook-line-2 {
+    font-size: clamp(2.2rem, 4.1vw, 4.3rem);
+}
+
+.hook-scene--three .hook-question-line {
+    font-size: clamp(2.5rem, 4.5vw, 5rem);
+}
+
+@media (max-width: 768px) {
+    .hook-scene {
+        padding: 0 24px;
+    }
+
+    .hook-sequence {
+        gap: 20px;
+    }
+
+    .hook-response-minimal {
+        font-size: 17px;
+    }
+
+    .hook-choice-wrap {
+        gap: 16px;
+    }
+}
