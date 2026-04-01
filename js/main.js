@@ -197,6 +197,7 @@ async function init() {
     animatedSections.forEach(section => observer.observe(section));
 
     initLandingVis();
+    initHookExperience();
 }
 
 function initLandingVis() {
@@ -271,6 +272,73 @@ function initLandingVis() {
         svg.attr("viewBox", `0 0 ${w} ${h}`);
         projection.scale(Math.min(w, h) / 2).translate([w / 2, h / 2]);
     });
+}
+
+function initHookExperience() {
+    const buttons = document.querySelectorAll(".visa-choice-btn");
+    const response = document.getElementById("hook-response");
+    const visualResponse = document.getElementById("hook-visual-response");
+    const visualSection = document.getElementById("hook-4");
+    const cards = document.querySelectorAll(".journey-card");
+
+    if (!buttons.length || !response || !visualResponse || !visualSection || !cards.length) return;
+
+    const copy = {
+        "visa-free": {
+            response: `
+                <strong>You are among the lucky travelers.</strong>
+                For you, crossing into Europe is usually treated as movement, not permission.
+                <span class="accent">That ease is not universal.</span>
+            `,
+            visual: `
+                <strong>Your distance to Europe is mostly geographic.</strong>
+                The border may feel routine. For millions of others, the journey is longer before it even begins.
+            `
+        },
+        "visa-required": {
+            response: `
+                <strong>Your route to Europe may begin long before the airport.</strong>
+                For many travelers, access depends not only on where they want to go, but
+                <span class="accent">where they were born.</span>
+            `,
+            visual: `
+                <strong>Your distance to Europe is bureaucratic as well as geographic.</strong>
+                The same destination can demand proof, payment, waiting, and the risk of losing money without ever crossing the border.
+            `
+        }
+    };
+
+    function activateJourney(type) {
+        buttons.forEach(btn => {
+            btn.classList.toggle("active", btn.dataset.journey === type);
+        });
+
+        cards.forEach(card => {
+            card.classList.toggle("active", card.dataset.card === type);
+        });
+
+        response.innerHTML = copy[type].response;
+        visualResponse.innerHTML = copy[type].visual;
+
+        setTimeout(() => {
+            visualSection.scrollIntoView({ behavior: "smooth", block: "start" });
+        }, 450);
+    }
+
+    buttons.forEach(button => {
+        button.addEventListener("click", () => {
+            activateJourney(button.dataset.journey);
+        });
+    });
+
+    cards.forEach(card => {
+        card.addEventListener("click", () => {
+            activateJourney(card.dataset.card);
+        });
+    });
+
+    // default state
+    cards.forEach(card => card.classList.remove("active"));
 }
 
 init().catch(error => {
