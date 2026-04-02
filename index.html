@@ -26,174 +26,79 @@
     </div>
 </section>
 
-<section id="hook-1" class="transition-page hook-scene hook-scene--one">
-    <div class="hook-canvas">
-        <div class="hook-sequence">
-            <p class="hook-line hook-line-1">You are a citizen of the world.</p>
-            <p class="hook-line hook-line-2">
-                And you might want to travel across the vast geography of that world.
-            </p>
-            <p class="hook-line hook-line-3">
-                Maybe the Americas. Maybe <span class="accent-line">Europe.</span>
-            </p>
-        </div>
+<section id="hook-1" class="transition-page passport-hook-scene">
+    <div class="passport-hook-copy">
+        <p class="passport-hook-line passport-hook-line-1">You are a citizen of the world.</p>
+        <p class="passport-hook-line passport-hook-line-2">
+            And you might want to travel across the vast geography of that world.
+        </p>
+        <p class="passport-hook-line passport-hook-line-3">
+            Maybe the Americas. Maybe <span class="accent-line">Europe.</span>
+        </p>
+        <p class="passport-hook-line passport-hook-line-4">
+            But do you think it matters <span class="accent-line">which side of the border</span> you were born in?
+        </p>
     </div>
 </section>
 
-<section id="hook-2" class="transition-page hook-scene hook-scene--two">
-    <div class="hook-canvas">
-        <div class="hook-sequence">
-            <p class="hook-line hook-line-1">
-                The question is: <span class="hook-strong">what does crossing a border cost?</span>
-            </p>
-            <p class="hook-line hook-line-2">
-                You are a citizen of the world, after all.
-            </p>
-            <p class="hook-line hook-line-3">
-                Or does it matter <span class="accent-line">which side of the border</span> you were born on?
-            </p>
+<section id="passport-power-section" class="transition-page passport-power-section">
+    <div class="passport-power-layout">
+        <div class="passport-power-chart-column">
+            <div class="passport-power-heading">
+                <p class="passport-power-kicker">Passport privilege atlas</p>
+                <h2 class="passport-power-title">How much of the world opens with the passport you inherit?</h2>
+            </div>
+            <div id="passport-power-vis"></div>
+            <div class="passport-power-legend" id="passport-power-legend"></div>
         </div>
+
+        <aside class="passport-power-panel" id="passport-power-panel">
+            <p class="passport-panel-kicker">Select a country</p>
+            <h3 id="passport-panel-country">Hover or click a passport</h3>
+            <p id="passport-panel-status" class="passport-panel-status">
+                Passport privilege is not distributed equally.
+            </p>
+
+            <div class="passport-panel-stats">
+                <div class="passport-stat">
+                    <span class="passport-stat-label">Rank</span>
+                    <strong id="passport-panel-rank">—</strong>
+                </div>
+                <div class="passport-stat">
+                    <span class="passport-stat-label">Visa-free score</span>
+                    <strong id="passport-panel-score">—</strong>
+                </div>
+                <div class="passport-stat">
+                    <span class="passport-stat-label">Europe status</span>
+                    <strong id="passport-panel-europe">—</strong>
+                </div>
+            </div>
+
+            <div id="passport-panel-message" class="passport-panel-message">
+                Click a country to see how its passport changes the cost of reaching Europe.
+            </div>
+
+            <div class="passport-panel-filter">
+                <p class="passport-panel-filter-title" id="passport-filter-title">Waiting for selection</p>
+                <p class="passport-panel-filter-copy" id="passport-filter-copy">
+                    After selection, countries with the same Europe access status will stay highlighted.
+                </p>
+            </div>
+        </aside>
     </div>
+
+    <div class="passport-tooltip" id="passport-tooltip"></div>
 </section>
 
-<section id="hook-3" class="transition-page hook-scene hook-scene--three">
-    <div class="hook-canvas">
-        <div class="hook-sequence hook-sequence--choice">
-            <p class="hook-line hook-line-1">
-                For some travelers, Europe is a flight away.
-            </p>
-            <p class="hook-line hook-line-2">
-                For others, it is paperwork, fees, and refusal.
-            </p>
-            <p class="hook-line hook-line-3 hook-question-line">
-                Which world are you in?
-            </p>
-
-            <div class="hook-choice-wrap">
-                <button class="visa-choice-btn" data-journey="visa-free">I do not need a visa</button>
-                <button class="visa-choice-btn" data-journey="visa-required">I need a visa / I’m not sure</button>
-            </div>
-
-            <div id="hook-response" class="hook-response-minimal">
-                Choose a path to continue.
-            </div>
-        </div>
-    </div>
-</section>
-
-<section id="hook-4" class="transition-page hook-visual-page">
-    <div class="hook-visual-wrap">
-        <div class="hook-visual-header">
-            <p class="hook-visual-kicker">The same destination does not cost everyone the same.</p>
-            <h2 class="hook-visual-title">Europe is not equally distant from everyone.</h2>
-            <p class="hook-visual-subtitle">
-                For some, distance is measured in kilometers. For others, it is measured in bureaucracy.
-            </p>
-        </div>
-
-        <div class="journey-comparison" id="journey-comparison">
-            <div class="journey-card journey-card--free" data-card="visa-free">
-                <div class="journey-card-header">
-                    <span class="journey-badge">Visa-free path</span>
-                    <h3>Distance by travel</h3>
-                    <p>One border. Minimal friction.</p>
-                </div>
-
-                <div class="journey-track">
-                    <div class="journey-step">
-                        <span class="journey-node"></span>
-                        <div class="journey-copy">
-                            <strong>Book a flight</strong>
-                            <span>You decide to go.</span>
-                        </div>
-                    </div>
-
-                    <div class="journey-link"></div>
-
-                    <div class="journey-step">
-                        <span class="journey-node"></span>
-                        <div class="journey-copy">
-                            <strong>Pack and depart</strong>
-                            <span>The trip is mostly logistical.</span>
-                        </div>
-                    </div>
-
-                    <div class="journey-link"></div>
-
-                    <div class="journey-step">
-                        <span class="journey-node"></span>
-                        <div class="journey-copy">
-                            <strong>Arrive in Europe</strong>
-                            <span>The border is a checkpoint, not a gamble.</span>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="journey-metric">
-                    <span>Typical cost of the border</span>
-                    <strong>Almost none</strong>
-                </div>
-            </div>
-
-            <div class="journey-card journey-card--required" data-card="visa-required">
-                <div class="journey-card-header">
-                    <span class="journey-badge journey-badge--accent">Visa-required path</span>
-                    <h3>Distance by paperwork</h3>
-                    <p>Same destination. More gates.</p>
-                </div>
-
-                <div class="journey-track">
-                    <div class="journey-step">
-                        <span class="journey-node"></span>
-                        <div class="journey-copy">
-                            <strong>Prepare documents</strong>
-                            <span>Proof, forms, appointments, financial records.</span>
-                        </div>
-                    </div>
-
-                    <div class="journey-link journey-link--accent"></div>
-
-                    <div class="journey-step">
-                        <span class="journey-node journey-node--accent"></span>
-                        <div class="journey-copy">
-                            <strong>Pay the visa fee</strong>
-                            <span>You pay before knowing the outcome.</span>
-                        </div>
-                    </div>
-
-                    <div class="journey-link journey-link--accent"></div>
-
-                    <div class="journey-step">
-                        <span class="journey-node journey-node--accent"></span>
-                        <div class="journey-copy">
-                            <strong>Wait for a decision</strong>
-                            <span>Time and uncertainty become part of the trip.</span>
-                        </div>
-                    </div>
-
-                    <div class="journey-link journey-link--accent journey-link--broken"></div>
-
-                    <div class="journey-step journey-step--risk">
-                        <span class="journey-node journey-node--risk"></span>
-                        <div class="journey-copy">
-                            <strong>Risk refusal</strong>
-                            <span>The fee is often non-refundable, even if denied.</span>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="journey-metric journey-metric--accent">
-                    <span>Typical cost of the border</span>
-                    <strong>Money, delay, and risk</strong>
-                </div>
-            </div>
-        </div>
-
-        <div class="hook-visual-response" id="hook-visual-response">
-            Select a path above and then scroll to see how that inequality appears on the map.
-        </div>
-
-        <div class="hook-continue">
+<section id="hook-outro" class="transition-page passport-outro-section">
+    <div class="passport-outro-copy">
+        <p class="passport-outro-line passport-outro-line-1">
+            Your distance to Europe is <span class="accent-line">bureaucratic</span> as well as geographic.
+        </p>
+        <p class="passport-outro-line passport-outro-line-2">
+            The same destination can demand proof, payment, waiting, and the risk of losing money without ever crossing the border.
+        </p>
+        <div class="passport-outro-cta">
             <a href="#explanation" class="btn-primary">Continue to the Schengen visa</a>
         </div>
     </div>
@@ -333,6 +238,7 @@
 
 <script src="https://d3js.org/d3.v7.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+<script src="js/passportPowerHook.js"></script>
 <script src="js/main.js"></script>
 <script src="js/mapVis.js"></script>
 <script src="js/salaryVis.js"></script>
