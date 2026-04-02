@@ -6,7 +6,7 @@ async function initPassportPowerHook() {
     const visContainer = d3.select("#passport-power-vis");
     if (visContainer.empty()) return;
 
-    let data = await d3.csv("data/passport_power_2023_ranked_with_birth_share_europe_status.csv", d3.autoType);
+    let data = await d3.csv("data/passport_power_2023_ranked_with_birth_share.csv", d3.autoType);
 
     data = data
         .filter(d =>
